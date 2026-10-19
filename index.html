@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sambung Karya - Kolaborasi Talenta Mahasiswa & UMKM</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eef2ff',
+                            100: '#e0e7ff',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            700: '#4338ca',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-primary-500 selection:text-white">
+
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primary-600 to-indigo-400 flex items-center justify-center text-white shadow-lg shadow-primary-500/30">
+                    <i class="fa-solid fa-hands-holding-child text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold bg-gradient-to-r from-primary-700 to-indigo-500 bg-clip-text text-transparent">SambungKarya</span>
+                    <span class="block text-xs text-slate-500 font-medium">Ekonomi Inklusif Digital</span>
+                </div>
+            </div>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+                <a href="#beranda" class="hover:text-primary-600 transition-colors">Beranda</a>
+                <a href="#tentang" class="hover:text-primary-600 transition-colors">Sistem Inovasi</a>
+                <a href="#proyek" class="hover:text-primary-600 transition-colors">Daftar Proyek</a>
+                <a href="#talenta" class="hover:text-primary-600 transition-colors">Talenta Mahasiswa</a>
+                <a href="#dampak" class="hover:text-primary-600 transition-colors">Dampak Real</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <a href="https://wa.me/6285185745258?text=HALO_BOT_SAMBUNGKARYA" target="_blank" class="hidden sm:inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold bg-emerald-50 text-emerald-600 hover:bg-emerald-100 transition-all border border-emerald-200">
+                    <i class="fa-brands fa-whatsapp text-base"></i> Tanya Chatbot WA
+                </a>
+                <button onclick="openModal('loginModal')" class="hidden sm:inline-flex px-4 py-2 rounded-xl text-sm font-semibold text-primary-600 hover:bg-primary-50 transition-all">Masuk</button>
+                <button onclick="openModal('registerModal')" class="px-4 py-2 rounded-xl text-sm font-semibold bg-primary-600 text-white hover:bg-primary-700 shadow-md shadow-primary-600/20 transition-all">Mulai Kolaborasi</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="beranda" class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 bg-gradient-to-b from-primary-50/50 via-white to-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold tracking-wide">
+                            <i class="fa-solid fa-sparkles"></i> Akselerator Ekonomi Inklusif Digital
+                        </div>
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                            Menghubungkan <span class="bg-gradient-to-r from-primary-600 to-indigo-500 bg-clip-text text-transparent">Talenta Mahasiswa</span> & UMKM Indonesia
+                        </h1>
+                        <p class="text-lg text-slate-600 max-w-2xl mx-auto lg:mx-0">
+                            Wujudkan ekosistem inovasi digital mandiri. Bantu UMKM naik kelas melalui solusi teknologi, branding, dan strategi pemasaran yang dirancang langsung oleh mahasiswa berbakat Indonesia.
+                        </p>
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#proyek" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold bg-primary-600 text-white hover:bg-primary-700 shadow-lg shadow-primary-600/30 text-center transition-all">
+                                Cari Proyek UMKM
+                            </a>
+                            <a href="#tentang" class="w-full sm:w-auto px-8 py-4 rounded-xl font-semibold bg-white text-slate-700 border border-slate-200 hover:bg-slate-50 text-center transition-all">
+                                Pelajari Sistem Kami
+                            </a>
+                        </div>
+                        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-slate-200 text-left">
+                            <div>
+                                <span class="block text-2xl font-bold text-slate-900">1,250+</span>
+                                <span class="text-xs text-slate-500">UMKM Terbantu</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-bold text-slate-900">3,400+</span>
+                                <span class="text-xs text-slate-500">Mahasiswa Aktif</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-bold text-slate-900">Rp 4.2M+</span>
+                                <span class="text-xs text-slate-500">Nilai Transaksi Dampak</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-primary-500 to-indigo-400 rounded-3xl blur-2xl opacity-20 animate-pulse"></div>
+                            <div class="relative bg-white rounded-2xl shadow-xl border border-slate-100 p-6 space-y-6">
+                                <div class="flex items-center justify-between border-b border-slate-100 pb-4">
+                                    <div class="flex items-center gap-3">
+                                        <img src="https://placehold.co/48x48/4f46e5/ffffff?text=UM" alt="Avatar UMKM" class="w-12 h-12 rounded-xl object-cover">
+                                        <div>
+                                            <h4 class="font-bold text-sm text-slate-900">Kopi Rempah Nusantara</h4>
+                                            <span class="text-xs text-emerald-600 font-medium flex items-center gap-1"><i class="fa-solid fa-circle text-[8px]"></i> UMKM Kuliner Bandung</span>
+                                        </div>
+                                    </div>
+                                    <span class="px-2.5 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold">Aktif Kolaborasi</span>
+                                </div>
+                                <div class="bg-slate-50 rounded-xl p-4 space-y-3">
+                                    <div class="flex justify-between items-center text-xs">
+                                        <span class="text-slate-500 font-medium">Proyek Berjalan:</span>
+                                        <span class="text-primary-600 font-bold">Pembuatan Website E-Commerce & UI/UX</span>
+                                    </div>
+                                    <div class="w-full bg-slate-200 h-2 rounded-full overflow-hidden">
+                                        <div class="bg-primary-600 h-full rounded-full" style="width: 75%"></div>
+                                    </div>
+                                    <div class="flex justify-between items-center text-xs text-slate-500">
+                                        <span>Talenta: Tim Mahasiswa ITB</span>
+                                        <span class="font-bold text-slate-700">75% Selesai</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center gap-3 p-3 rounded-xl bg-primary-50 text-primary-800 text-xs">
+                                    <i class="fa-solid fa-lightbulb text-base"></i>
+                                    <p>UMKM ini mengalami peningkatan omset digital sebesar <strong>140%</strong> pasca kolaborasi.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang" class="py-20 bg-white border-t border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-primary-600">Sistem Inovasi Ekonomi Digital</h2>
+                    <h3 class="text-3xl font-extrabold text-slate-900">Bagaimana Sambung Karya Bekerja?</h3>
+                    <p class="text-slate-600">Kami menjembatani potensi akademis mahasiswa dengan kebutuhan riil pelaku usaha mikro, kecil, dan menengah menuju ekonomi yang inklusif.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:shadow-lg transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-primary-100 text-primary-600 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900">1. Kurasi & Pemetaan Kebutuhan</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            UMKM mendaftarkan kendala digital mereka (branding, aplikasi, pemasaran digital), yang kemudian dikurasi menjadi proyek riset atau magang aplikatif mahasiswa.
+                        </p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:shadow-lg transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-primary-100 text-primary-600 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900">2. Kolaborasi & Matching Talenta</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Mahasiswa dengan keahlian spesifik (Desain, Informatika, Bisnis, Digital Marketing) dipilih atau melamar untuk mengerjakan proyek bersama UMKM.
+                        </p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-100 space-y-4 hover:shadow-lg transition-all">
+                        <div class="w-14 h-14 rounded-2xl bg-primary-100 text-primary-600 flex items-center justify-center text-2xl font-bold">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h4 class="text-xl font-bold text-slate-900">3. Transformasi Ekonomi Inklusif</h4>
+                        <p class="text-sm text-slate-600 leading-relaxed">
+                            Hasil karya langsung diimplementasikan untuk mendongkrak produktivitas UMKM sekaligus memberikan pengalaman kerja nyata bersertifikat bagi mahasiswa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="proyek" class="py-20 bg-slate-50 border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div>
+                        <h2 class="text-xs font-bold uppercase tracking-widest text-primary-600 mb-2">Peluang Kolaborasi</h2>
+                        <h3 class="text-3xl font-extrabold text-slate-900">Proyek UMKM Terbaru</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <button onclick="filterProjects('all')" class="px-4 py-2 rounded-xl text-xs font-semibold bg-primary-600 text-white shadow-sm filter-btn active">Semua</button>
+                        <button onclick="filterProjects('Teknologi')" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 filter-btn">Teknologi & Web</button>
+                        <button onclick="filterProjects('Desain')" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 filter-btn">Desain & Branding</button>
+                        <button onclick="filterProjects('Pemasaran')" class="px-4 py-2 rounded-xl text-xs font-semibold bg-white text-slate-600 border border-slate-200 hover:bg-slate-100 filter-btn">Digital Marketing</button>
+                    </div>
+                </div>
+
+                <!-- Projects Grid -->
+                <div id="projectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Item 1 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between project-card" data-category="Teknologi">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="px-3 py-1 rounded-lg bg-indigo-50 text-indigo-700 text-xs font-semibold">Teknologi</span>
+                                <span class="text-xs text-slate-400 font-medium">2 hari lalu</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900">Pengembangan Sistem POS & Inventory Kedai Rajawali</h4>
+                            <p class="text-sm text-slate-600 line-clamp-3">Membutuhkan talenta mahasiswa IT untuk membuat aplikasi pencatatan kasir berbasis web sederhana guna efisiensi operasional.</p>
+                            <div class="flex items-center gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">React.js</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Tailwind</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">NodeJS</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <div>
+                                <span class="block text-[10px] text-slate-400 font-semibold uppercase">Estimasi Insentif</span>
+                                <span class="text-sm font-bold text-slate-900">Rp 2.500.000 + Sertifikat</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a href="https://wa.me/6285185745258?text=%23INFO_PROYEK%0A%0AJudul%3A%20Pengembangan%20Sistem%20POS%20%26%20Inventory%0AMitra%3A%20Kedai%20Rajawali%0A%0AStatus%3A%20Saya%20ingin%20bertanya%20detail%20proyek%20ini%20ke%20Chatbot." target="_blank" class="p-2 rounded-xl bg-emerald-100 text-emerald-700 hover:bg-emerald-200 transition-all" title="Chat WA Bot UMKM">
+                                    <i class="fa-brands fa-whatsapp text-base"></i>
+                                </a>
+                                <button onclick="openProjectDetail('Sistem POS Kedai Rajawali', 'Teknologi', 'Kedai Rajawali (Bandung)', 'Rp 2.500.000', 'Membutuhkan talenta mahasiswa IT untuk membuat aplikasi pencatatan kasir berbasis web sederhana guna efisiensi operasional harian warung kopi.', '6285185745258')" class="px-4 py-2 rounded-xl bg-primary-600 text-white text-xs font-semibold hover:bg-primary-700 transition-all">
+                                    Lamar Proyek
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Item 2 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between project-card" data-category="Desain">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="px-3 py-1 rounded-lg bg-pink-50 text-pink-700 text-xs font-semibold">Desain</span>
+                                <span class="text-xs text-slate-400 font-medium">4 hari lalu</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900">Rebranding Kemasan & Logo Keripik Singkong Barokah</h4>
+                            <p class="text-sm text-slate-600 line-clamp-3">UMKM keripik tradisional memerlukan desainer grafis mahasiswa untuk mendesain ulang kemasan agar tembus pasar retail modern.</p>
+                            <div class="flex items-center gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Adobe Illustrator</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Packaging Design</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <div>
+                                <span class="block text-[10px] text-slate-400 font-semibold uppercase">Estimasi Insentif</span>
+                                <span class="text-sm font-bold text-slate-900">Rp 1.500.000 + Sertifikat</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a href="https://wa.me/6285185745258?text=%23INFO_PROYEK%0A%0AJudul%3A%20Rebranding%20Kemasan%20%26%20Logo%0AMitra%3A%20Keripik%20Barokah%0A%0AStatus%3A%20Saya%20ingin%20bertanya%20detail%20proyek%20ini%20ke%20Chatbot." target="_blank" class="p-2 rounded-xl bg-emerald-100 text-emerald-700 hover:bg-emerald-200 transition-all" title="Chat WA Bot UMKM">
+                                    <i class="fa-brands fa-whatsapp text-base"></i>
+                                </a>
+                                <button onclick="openProjectDetail('Rebranding Keripik Barokah', 'Desain', 'Keripik Barokah (Garut)', 'Rp 1.500.000', 'UMKM keripik tradisional memerlukan desainer grafis mahasiswa untuk mendesain ulang kemasan dan logo agar tembus pasar retail modern dan minimarket.', '6285185745258')" class="px-4 py-2 rounded-xl bg-primary-600 text-white text-xs font-semibold hover:bg-primary-700 transition-all">
+                                    Lamar Proyek
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Item 3 -->
+                    <div class="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition-all flex flex-col justify-between project-card" data-category="Pemasaran">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-start">
+                                <span class="px-3 py-1 rounded-lg bg-amber-50 text-amber-700 text-xs font-semibold">Pemasaran</span>
+                                <span class="text-xs text-slate-400 font-medium">1 minggu lalu</span>
+                            </div>
+                            <h4 class="text-lg font-bold text-slate-900">Strategi Kampanye TikTok & Reels Batik Tulis Lestari</h4>
+                            <p class="text-sm text-slate-600 line-clamp-3">Membantu perajin batik lokal memperluas pangsa pasar ke generasi muda melalui konten video pendek yang kreatif dan terstruktur.</p>
+                            <div class="flex items-center gap-2 pt-2">
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Social Media</span>
+                                <span class="px-2.5 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">Content Strategy</span>
+                            </div>
+                        </div>
+                        <div class="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+                            <div>
+                                <span class="block text-[10px] text-slate-400 font-semibold uppercase">Estimasi Insentif</span>
+                                <span class="text-sm font-bold text-slate-900">Rp 2.000.000 + Sertifikat</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <a href="https://wa.me/6285185745258?text=%23INFO_PROYEK%0A%0AJudul%3A%20Strategi%20Kampanye%20TikTok%20%26%20Reels%0AMitra%3A%20Batik%20Lestari%0A%0AStatus%3A%20Saya%20ingin%20bertanya%20detail%20proyek%20ini%20ke%20Chatbot." target="_blank" class="p-2 rounded-xl bg-emerald-100 text-emerald-700 hover:bg-emerald-200 transition-all" title="Chat WA Bot UMKM">
+                                    <i class="fa-brands fa-whatsapp text-base"></i>
+                                </a>
+                                <button onclick="openProjectDetail('Kampanye Batik Lestari', 'Pemasaran', 'Batik Lestari (Yogyakarta)', 'Rp 2.000.000', 'Membantu perajin batik lokal memperluas pangsa pasar ke generasi muda melalui konten video pendek di TikTok dan Instagram Reels.', '6285185745258')" class="px-4 py-2 rounded-xl bg-primary-600 text-white text-xs font-semibold hover:bg-primary-700 transition-all">
+                                    Lamar Proyek
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="talenta" class="py-20 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-primary-600">Talenta Unggulan</h2>
+                    <h3 class="text-3xl font-extrabold text-slate-900">Mahasiswa Kreatif & Siap Berkolaborasi</h3>
+                    <p class="text-slate-600">Temukan talenta muda berbakat dari berbagai universitas yang siap membantu mentransformasi bisnis Anda secara digital.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center space-y-4">
+                        <img src="https://placehold.co/96x96/6366f1/ffffff?text=AN" alt="Talenta" class="w-24 h-24 rounded-full mx-auto object-cover shadow-md">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base">Ahmad Naufal</h4>
+                            <span class="text-xs text-primary-600 font-semibold">Software Engineer • UI/UX</span>
+                            <span class="block text-xs text-slate-400 mt-1">Institut Teknologi Bandung</span>
+                        </div>
+                        <div class="flex justify-center gap-1.5 flex-wrap">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">React</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">Figma</span>
+                        </div>
+                        <a href="https://wa.me/6285185745258?text=%23TALENTA_MAHASISWA%0A%0ANama%3A%20Ahmad%20Naufal%0AKeahlian%3A%20Software%20Engineer%20%E2%80%A2%20UI%2FX%0A%0AStatus%3A%20Saya%20pelaku%20UMKM%20yang%20ingin%20mengajak%20kolaborasi." target="_blank" class="inline-flex justify-center items-center gap-2 w-full py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold hover:bg-emerald-100 transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Ajak Kolaborasi (WA Bot)
+                        </a>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center space-y-4">
+                        <img src="https://placehold.co/96x96/4f46e5/ffffff?text=DP" alt="Talenta" class="w-24 h-24 rounded-full mx-auto object-cover shadow-md">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base">Dewi Puspita</h4>
+                            <span class="text-xs text-primary-600 font-semibold">Brand Designer</span>
+                            <span class="block text-xs text-slate-400 mt-1">Universitas Gadjah Mada</span>
+                        </div>
+                        <div class="flex justify-center gap-1.5 flex-wrap">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">Illustrator</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">Branding</span>
+    <!-- Floating WhatsApp Widget Button with Chatbot Greeting -->
+    <a href="https://wa.me/6285185745258?text=HALO_BOT_SAMBUNGKARYA%0A%0AMenu%20Bantuan%3A%0A1.%20Cara%20Daftar%20UMKM%0A2.%20Cara%20Melamar%20Proyek%0A3.%20Informasi%20Insentif%20%26%20Sertifikat%0A4.%20Hubungi%20Admin%20Human" target="_blank" class="fixed bottom-6 left-6 z-40 bg-emerald-500 text-white p-3.5 rounded-full shadow-lg hover:bg-emerald-600 transition-all flex items-center gap-2 group hover:pr-5">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-xs font-bold">Chatbot WA Active 🤖</span>
+    </a>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center space-y-4">
+                        <img src="https://placehold.co/96x96/4338ca/ffffff?text=RA" alt="Talenta" class="w-24 h-24 rounded-full mx-auto object-cover shadow-md">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base">Rizky Ananda</h4>
+                            <span class="text-xs text-primary-600 font-semibold">Digital Marketer</span>
+                            <span class="block text-xs text-slate-400 mt-1">Universitas Indonesia</span>
+                        </div>
+                        <div class="flex justify-center gap-1.5 flex-wrap">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">TikTok Ads</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">Copywriting</span>
+                        </div>
+                        <a href="https://wa.me/6285185745258?text=Halo%20Rizky%20Ananda,%20saya%20pemilik%20UMKM%20yang%20tertarik%20mengajak%20Anda%20berkolaborasi" target="_blank" class="inline-flex justify-center items-center gap-2 w-full py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold hover:bg-emerald-100 transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Hubungi via WA
+                        </a>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center space-y-4">
+                        <img src="https://placehold.co/96x96/6366f1/ffffff?text=SN" alt="Talenta" class="w-24 h-24 rounded-full mx-auto object-cover shadow-md">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base">Siti Nurhaliza</h4>
+                            <span class="text-xs text-primary-600 font-semibold">E-Commerce Specialist</span>
+                            <span class="block text-xs text-slate-400 mt-1">Universitas Airlangga</span>
+                        </div>
+                        <div class="flex justify-center gap-1.5 flex-wrap">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">Shopee/Tokopedia</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">SEO</span>
+                        </div>
+                        <a href="https://wa.me/6285185745258?text=Halo%20Siti%20Nurhaliza,%20saya%20pemilik%20UMKM%20yang%20tertarik%20mengajak%20Anda%20berkolaborasi" target="_blank" class="inline-flex justify-center items-center gap-2 w-full py-2 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-700 text-xs font-semibold hover:bg-emerald-100 transition-all">
+                            <i class="fa-brands fa-whatsapp text-sm"></i> Hubungi via WA
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="talenta" class="py-20 bg-white border-t border-slate-200">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+                    <h2 class="text-xs font-bold uppercase tracking-widest text-primary-600">Talenta Unggulan</h2>
+                    <h3 class="text-3xl font-extrabold text-slate-900">Mahasiswa Kreatif & Siap Berkolaborasi</h3>
+                    <p class="text-slate-600">Temukan talenta muda berbakat dari berbagai universitas yang siap membantu mentransformasi bisnis Anda secara digital.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center space-y-4">
+                        <img src="https://placehold.co/96x96/6366f1/ffffff?text=AN" alt="Talenta" class="w-24 h-24 rounded-full mx-auto object-cover shadow-md">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base">Ahmad Naufal</h4>
+                            <span class="text-xs text-primary-600 font-semibold">Software Engineer • UI/UX</span>
+                            <span class="block text-xs text-slate-400 mt-1">Institut Teknologi Bandung</span>
+                        </div>
+                        <div class="flex justify-center gap-1.5 flex-wrap">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">React</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">Figma</span>
+                        </div>
+                        <button onclick="openModal('registerModal')" class="w-full py-2 rounded-xl bg-white border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-all">Ajak Kolaborasi</button>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center space-y-4">
+                        <img src="https://placehold.co/96x96/4f46e5/ffffff?text=DP" alt="Talenta" class="w-24 h-24 rounded-full mx-auto object-cover shadow-md">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base">Dewi Puspita</h4>
+                            <span class="text-xs text-primary-600 font-semibold">Brand Designer</span>
+                            <span class="block text-xs text-slate-400 mt-1">Universitas Gadjah Mada</span>
+                        </div>
+                        <div class="flex justify-center gap-1.5 flex-wrap">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">Illustrator</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">Branding</span>
+                        </div>
+                        <button onclick="openModal('registerModal')" class="w-full py-2 rounded-xl bg-white border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-all">Ajak Kolaborasi</button>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center space-y-4">
+                        <img src="https://placehold.co/96x96/4338ca/ffffff?text=RA" alt="Talenta" class="w-24 h-24 rounded-full mx-auto object-cover shadow-md">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base">Rizky Ananda</h4>
+                            <span class="text-xs text-primary-600 font-semibold">Digital Marketer</span>
+                            <span class="block text-xs text-slate-400 mt-1">Universitas Indonesia</span>
+                        </div>
+                        <div class="flex justify-center gap-1.5 flex-wrap">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">TikTok Ads</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">Copywriting</span>
+                        </div>
+                        <button onclick="openModal('registerModal')" class="w-full py-2 rounded-xl bg-white border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-all">Ajak Kolaborasi</button>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center space-y-4">
+                        <img src="https://placehold.co/96x96/6366f1/ffffff?text=SN" alt="Talenta" class="w-24 h-24 rounded-full mx-auto object-cover shadow-md">
+                        <div>
+                            <h4 class="font-bold text-slate-900 text-base">Siti Nurhaliza</h4>
+                            <span class="text-xs text-primary-600 font-semibold">E-Commerce Specialist</span>
+                            <span class="block text-xs text-slate-400 mt-1">Universitas Airlangga</span>
+                        </div>
+                        <div class="flex justify-center gap-1.5 flex-wrap">
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">Shopee/Tokopedia</span>
+                            <span class="px-2 py-0.5 bg-white border border-slate-200 rounded text-[10px] text-slate-600 font-medium">SEO</span>
+                        </div>
+                        <button onclick="openModal('registerModal')" class="w-full py-2 rounded-xl bg-white border border-slate-300 text-slate-700 text-xs font-semibold hover:bg-slate-50 transition-all">Ajak Kolaborasi</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="dampak" class="py-20 bg-slate-900 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <span class="text-xs font-bold uppercase tracking-widest text-primary-400">Ekonomi Inklusif Nyata</span>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Membangun Jembatan Sukses Antara Kampus & Pasar</h2>
+                        <p class="text-slate-300 leading-relaxed">
+                            Sambung Karya tidak hanya mempertemukan kebutuhan bisnis dan keterampilan akademis. Kami memastikan setiap inovasi digital berdampak langsung pada pertumbuhan ekonomi kerakyatan secara berkelanjutan.
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 pt-4">
+                            <div>
+                                <span class="block text-3xl font-extrabold text-primary-400">89%</span>
+                                <span class="text-xs text-slate-400 mt-1 block">UMKM berhasil Go Digital dalam 3 bulan pertama</span>
+                            </div>
+                            <div>
+                                <span class="block text-3xl font-extrabold text-primary-400">95%</span>
+                                <span class="text-xs text-slate-400 mt-1 block">Mahasiswa mendapat portofolio dan sertifikat kerja</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-3xl border border-slate-700 space-y-6">
+                        <div class="flex items-center gap-4">
+                            <img src="https://placehold.co/56x56/4f46e5/ffffff?text=Ibu+Siti" alt="Testimoni" class="w-14 h-14 rounded-xl object-cover">
+                            <div>
+                                <h4 class="font-bold text-white text-base">Ibu Siti Aminah</h4>
+                                <span class="text-xs text-primary-400 font-medium">Pemilik UMKM Keripik & Oleh-Oleh</span>
+                            </div>
+                        </div>
+                        <p class="text-slate-300 text-sm leading-relaxed italic">
+                            "Sebelum bergabung dengan Sambung Karya, usaha saya hanya dikenal di sekitar kecamatan saja. Berkat bantuan mahasiswa ITB yang membuatkan toko online dan desain kemasan baru, penjualan saya kini menjangkau seluruh pulau Jawa!"
+                        </p>
+                        <div class="flex items-center gap-1 text-amber-400 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-primary-600 flex items-center justify-center text-white text-sm">
+                    <i class="fa-solid fa-hands-holding-child"></i>
+                </div>
+                <span class="font-bold text-slate-900 text-lg">SambungKarya</span>
+            </div>
+            <div class="flex items-center gap-2 text-xs text-slate-600">
+                <i class="fa-brands fa-whatsapp text-emerald-600 text-base"></i>
+                <span>Hotline WA: <strong>085185745258</strong></span>
+            </div>
+            <p class="text-xs text-slate-500">© 2026 Sambung Karya Indonesia. Menuju Ekonomi Inklusif & Berkelanjutan.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Widget Button -->
+    <a href="https://wa.me/6285185745258?text=Halo%20Admin%20SambungKarya,%20saya%20butuh%20bantuan%20terkait%20layanan%20kolaborasi." target="_blank" class="fixed bottom-6 left-6 z-40 bg-emerald-500 text-white p-3.5 rounded-full shadow-lg hover:bg-emerald-600 transition-all flex items-center gap-2 group hover:pr-5">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+        <span class="max-w-0 overflow-hidden whitespace-nowrap group-hover:max-w-xs transition-all duration-300 text-xs font-bold">Chat WhatsApp Admin</span>
+    </a>
+
+            <div class="flex items-center gap-4 text-slate-400 text-base">
+                <a href="#" class="hover:text-primary-600 transition-colors"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="hover:text-primary-600 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-primary-600 transition-colors"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Login -->
+    <div id="loginModal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 space-y-6 relative shadow-2xl">
+            <button onclick="closeModal('loginModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <div class="text-center space-y-2">
+                <h3 class="text-xl font-bold text-slate-900">Masuk ke SambungKarya</h3>
+                <p class="text-xs text-slate-500">Silakan masuk sebagai Talenta Mahasiswa atau Pelaku UMKM</p>
+            </div>
+            <form onsubmit="handleAuth(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Email</label>
+                    <input type="email" required placeholder="nama@email.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Kata Sandi</label>
+                    <input type="password" required placeholder="••••••••" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary-600">
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-primary-600 text-white font-semibold text-sm hover:bg-primary-700 transition-all shadow-md shadow-primary-600/20">Masuk</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Register -->
+    <div id="registerModal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-md w-full p-6 space-y-6 relative shadow-2xl">
+            <button onclick="closeModal('registerModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <div class="text-center space-y-2">
+                <h3 class="text-xl font-bold text-slate-900">Bergabung dengan SambungKarya</h3>
+                <p class="text-xs text-slate-500">Pilih peran Anda dalam ekosistem ekonomi inklusif</p>
+            </div>
+            <form onsubmit="handleAuth(event)" class="space-y-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Daftar Sebagai</label>
+                    <select class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary-600 bg-white">
+                        <option>Talenta Mahasiswa</option>
+                        <option>Pelaku UMKM</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Nama Lengkap / Nama Usaha</label>
+                    <input type="text" required placeholder="Nama Anda atau Usaha Anda" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary-600">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-700 mb-1">Email</label>
+                    <input type="email" required placeholder="nama@email.com" class="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:outline-none focus:border-primary-600">
+                </div>
+                <button type="submit" class="w-full py-3 rounded-xl bg-primary-600 text-white font-semibold text-sm hover:bg-primary-700 transition-all shadow-md shadow-primary-600/20">Daftar Sekarang</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal Detail Project & Lamaran -->
+    <div id="projectModal" class="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 space-y-6 relative shadow-2xl">
+            <button onclick="closeModal('projectModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600"><i class="fa-solid fa-xmark text-lg"></i></button>
+            <div>
+                <span id="modalCategory" class="px-2.5 py-1 rounded-lg bg-indigo-50 text-indigo-700 text-xs font-semibold">Kategori</span>
+                <h3 id="modalTitle" class="text-xl font-bold text-slate-900 mt-2">Judul Proyek</h3>
+                <span id="modalPartner" class="text-xs text-slate-500 font-medium block mt-1">Mitra UMKM</span>
+            </div>
+            <div class="bg-slate-50 p-4 rounded-xl space-y-2">
+                <span class="text-xs font-bold text-slate-700 uppercase">Deskripsi Proyek</span>
+                <p id="modalDesc" class="text-sm text-slate-600 leading-relaxed">Deskripsi lengkap proyek...</p>
+            </div>
+            <div class="flex items-center justify-between border-t border-slate-100 pt-4 gap-3">
+                <div>
+                    <span class="block text-[10px] text-slate-400 font-semibold uppercase">Estimasi Insentif</span>
+                    <span id="modalIncentive" class="text-sm font-bold text-slate-900">Rp 0</span>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button id="modalWaBtn" onclick="sendWaApplication()" class="px-4 py-2.5 rounded-xl bg-emerald-600 text-white text-xs font-semibold hover:bg-emerald-700 transition-all flex items-center gap-2 shadow-md shadow-emerald-600/20">
+                        <i class="fa-brands fa-whatsapp text-base"></i> Lamar via WA
+                    </button>
+                    <button onclick="submitApplication()" class="px-4 py-2.5 rounded-xl bg-primary-600 text-white text-xs font-semibold hover:bg-primary-700 transition-all shadow-md shadow-primary-600/20">
+                        Lamar di Web
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 bg-slate-900 text-white px-6 py-3 rounded-xl shadow-xl transform translate-y-32 transition-transform duration-300 flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-emerald-400"></i>
+        <span id="toastMessage" class="text-sm font-medium">Berhasil mengirim lamaran!</span>
+    </div>
+
+    <script>
+        let currentModalProjectTitle = '';
+        let currentModalWaNumber = '6285185745258';
+
+        function openProjectDetail(title, category, partner, incentive, desc, waNumber = '6285185745258') {
+            currentModalProjectTitle = title;
+            currentModalWaNumber = waNumber;
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalCategory').innerText = category;
+            document.getElementById('modalPartner').innerText = partner;
+            document.getElementById('modalIncentive').innerText = incentive;
+            document.getElementById('modalDesc').innerText = desc;
+            openModal('projectModal');
+        }
+
+        // Send formatted WhatsApp Chatbot trigger message for job application
+        function sendWaApplication() {
+            const botMessage = `%23LAMAR_PROYEK%0A%0A*Judul Proyek:* ${encodeURIComponent(currentModalProjectTitle)}%0A*Platform:* SambungKarya%0A%0A_Halo Chatbot SambungKarya, saya ingin mengirimkan berkas lamaran saya untuk proyek ini._`;
+            window.open(`https://wa.me/${currentModalWaNumber}?text=${botMessage}`, '_blank');
+            closeModal('projectModal');
+            showToast("Membuka WhatsApp Chatbot untuk verifikasi lamaran...");
+        }
+
+        // Project Filtering
+        function filterProjects(category) {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-primary-600', 'text-white', 'shadow-sm');
+                btn.classList.add('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            });
+            event.target.classList.remove('bg-white', 'text-slate-600', 'border', 'border-slate-200');
+            event.target.classList.add('bg-primary-600', 'text-white', 'shadow-sm');
+
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        function handleAuth(event) {
+            event.preventDefault();
+            closeModal('loginModal');
+            closeModal('registerModal');
+            showToast("Autentikasi berhasil! Selamat datang di SambungKarya.");
+        }
+
+        function submitApplication() {
+            closeModal('projectModal');
+            showToast("Lamaran kolaborasi berhasil dikirim ke mitra UMKM!");
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const msgEl = document.getElementById('toastMessage');
+            msgEl.innerText = message;
+            toast.classList.remove('translate-y-32');
+            setTimeout(() => {
+                toast.classList.add('translate-y-32');
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
